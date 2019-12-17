@@ -103,6 +103,7 @@ return Template::render('home', $data);
 
 *** Nota: Para incluir una template parcial llamamos al helper 'template_include' que acepta 
 dos parámetros el template y la data */
+```
 
 ###### Ejemplo. Supongamos la siguiente estructura de directorios
 
@@ -112,9 +113,14 @@ dos parámetros el template y la data */
 - index.php
 
 /** File: templates/partials/header.php */
+
+```php
 <h1>Header</h1>
+```
 
 /** File: templates/home.php */
+
+```php
 <?php template_include('/partials/header'); ?>
 
 <?php if (isset($alumnos)):?>
@@ -122,8 +128,11 @@ dos parámetros el template y la data */
 	<h1><?php echo $alumno['name'];?></h1>
 	<?php endforeach; ?>
 <?php endif;?>
+```
 
 /** File: index.php */
+
+```php
 <?php
 
 require "vendor/autoload.php";
@@ -138,5 +147,4 @@ $alumnos = [
 
 Template::$path = 'templates/';
 return Template::render('home', $alumnos);
-
 ```
