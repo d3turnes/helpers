@@ -110,10 +110,10 @@ return Template::render('home', $data);
 - templates/home.php
 - index.php
 
-/** templates/partials/header.php */
+/** File: templates/partials/header.php */
 <h1>Header</h1>
 
-/** templates/home.php */
+/** File: templates/home.php */
 <?php template_include('/partials/header'); ?>
 
 <?php if (isset($alumnos)):?>
@@ -122,12 +122,12 @@ return Template::render('home', $data);
 	<?php endforeach; ?>
 <?php endif;?>
 
-/** index.php */
+/** File: index.php */
 <?php
 
 require "vendor/autoload.php";
 
-user D3turnes\Helpers\Template;
+use D3turnes\Helpers\Template;
 
 $alumnos = [
 	['name' => 'Anne', 'age' => 18],
