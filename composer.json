@@ -17,6 +17,9 @@
     "require": {
     },
     "autoload": {
+		"files": [
+			"helpers.php"
+		],
         "psr-4": {"D3turnes\\Helpers\\": "src/"}
     },
 	"version":"1.0.0",
