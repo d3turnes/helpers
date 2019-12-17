@@ -78,7 +78,7 @@ $dbname = $config->get('database.mysql.dbname');
 /** asigna un valor en memoria */
 $config->set('key', 'value')
 
-/** si queremos que sea persistente, llamos al metodo save */
+/** si queremos que sea persistente, llamamos al método save */
 $config->set('name', 'App Name 2');
 $config->save();
 
@@ -86,8 +86,30 @@ $config->save();
 $config->delete('key');
 
 /** si queremos eliminar y guardar los cambios, usamos el método purge */
+
 $config->purge('key');
 
+## Uso de la clase Template
+
+```php
+<?php
+
+use D3turnes\Helpers\Template;
+
+/** Definimos el directorio donse se almacenarán los template, que por defecto es templates */
+Template::$path = 'views'; // cambia el directorio por defecto a views en lugar de templates
+
+return Template::render('home', $data);
+
+*** Nota: Para incluir una template parcial llamamos al helper 'template_include' que acepta dos parámetros template y data */
+
+##### Ejemplo
+
+- templates/
+- templates/partials/header.php
+- templates/home.php
+
+```
 
 
 
