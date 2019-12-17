@@ -83,11 +83,10 @@ $config->set('name', 'App Name 2');
 $config->save();
 
 /** elimina una key en memoria, si queremos que los datos persistan llamamos al metodo save */
-$config->delete('key');
+$config->delete(['key']);
 
 /** si queremos eliminar y guardar los cambios, usamos el método purge */
-
-$config->purge('key');
+$config->purge(['key']);
 ```
 
 ## Uso de la clase Template
@@ -104,10 +103,39 @@ return Template::render('home', $data);
 
 *** Nota: Para incluir una template parcial llamamos al helper 'template_include' que acepta dos parámetros template y data */
 
-### Ejemplo
+###### Ejemplo. Supongamos la siguiente estructura de directorios
 
 - templates/
 - templates/partials/header.php
 - templates/home.php
+- index.php
+
+/** templates/partials/header.php */
+<h1>Header</h1>
+
+/** templates/home.php */
+<?php template_include('/partials/header'); ?>
+
+<?php if (isset($alumnos)):?>
+	<?php foreach ($alumnos as $alumno):?>
+	<h1><?php echo $alumno['name'];?></h1>
+	<?php endforeach; ?>
+<?php endif;?>
+
+/** index.php */
+<?php
+
+require "vendor/autoload.php";
+
+user D3turnes\Helpers\Template;
+
+$alumnos = [
+	['name' => 'Anne', 'age' => 18],
+	['name' => 'Peter', 'age' => 19],
+	...
+];
+
+Template::$path = 'templates/';
+return Template::render('home', $alumnos);
 
 ```
