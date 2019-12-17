@@ -104,7 +104,7 @@ return Template::render('home', $data);
 
 *** Nota: Para incluir una template parcial llamamos al helper 'template_include' que acepta dos parámetros template y data */
 
-##### Ejemplo
+### Ejemplo
 
 - templates/
 - templates/partials/header.php
