@@ -112,13 +112,13 @@ dos parámetros el template y la data */
 - templates/home.php
 - index.php
 
-**File: templates/partials/header.php
+**_File: templates/partials/header.php_**
 
 ```php
 <h1>Header</h1>
 ```
 
-**File: templates/home.php
+**_File: templates/home.php_**
 
 ```php
 <?php template_include('/partials/header'); ?>
@@ -130,7 +130,7 @@ dos parámetros el template y la data */
 <?php endif;?>
 ```
 
-**File: index.php
+**_File: index.php_**
 
 ```php
 <?php
