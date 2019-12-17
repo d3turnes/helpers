@@ -96,12 +96,13 @@ $config->purge(['key']);
 
 use D3turnes\Helpers\Template;
 
-/** Definimos el directorio donse se almacenarán los template, que por defecto es templates */
+/** Definimos el directorio donde se almacenarán los templates, que por defecto es templates */
 Template::$path = 'views'; // cambia el directorio por defecto a views en lugar de templates
 
 return Template::render('home', $data);
 
-*** Nota: Para incluir una template parcial llamamos al helper 'template_include' que acepta dos parámetros template y data */
+*** Nota: Para incluir una template parcial llamamos al helper 'template_include' que acepta 
+dos parámetros template y data */
 
 ###### Ejemplo. Supongamos la siguiente estructura de directorios
 
