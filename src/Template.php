@@ -4,7 +4,7 @@ namespace D3turnes\Helpers;
 
 class Template {
 	
-	public static $path = '/templates';
+	public static $path = 'templates/';
 	
 	public static function render($template, $data = []) {
 		
