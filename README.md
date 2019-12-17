@@ -2,10 +2,10 @@
 
 composer require "d3turnes/helpers"
 
-## Uso de la Cache
+## Uso de la clase Cache
 
 ```php
-require "vendor/autoload.php"
+<?php
 
 use D3turnes\Helpers\Cache;
 
@@ -39,4 +39,56 @@ $value = $cache->pull('key');
 
 /** elimina todas las llaves almacenadas */
 $cache->flush();
+```
+
+## Uso de la clase Config con notación dot.
+
+```php
+<?php
+
+use D3turnes\Helpers\Config;
+
+$config = new Config([
+	'path' => 'config',
+	'file' => 'app'		// fichero php sin (.php)
+]);
+
+-- config/app.php
+
+<?php return [
+	'name' => 'App Name',
+	'phones' => [
+		'home' => 'xxxx',
+		'work' => 'yyyy'
+	]
+];
+
+/** Obtiene el valor de la llave 'name' del fichero app.php'
+$value = $config->get('key');	// return 'App Name'
+
+/** Obtiene el valor de la llave 'pones.home' del fichero app.php
+$value = $config->get('app.phones.home');	// return 'xxxx'
+
+La llave 'key' puede ser simple o compuesta. Si es simple la toma del fichero por defecto app en caso contrario, el primer valor de la llave indica el fichero y el resto la propia llave.
+
+/** retorna la llave dbname del array mysql del fichero database.php dentro del directorio config */
+$dbname = $config->get('database.mysql.dbname');
+
+/** asigna un valor en memoria */
+$config->set('key', 'value')
+
+/** si queremos que sea persistente, llamos al metodo save */
+$config->set('name', 'App Name 2');
+$config->save();
+
+/** elimina una key en memoria, si queremos que los datos persistan llamamos al metodo save */
+$config->delete('key');
+
+/** si queremos eliminar y guardar los cambios, usamos el método purge */
+$config->purge('key');
+
+
+
+
+
 ```
