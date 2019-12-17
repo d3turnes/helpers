@@ -63,13 +63,14 @@ $config = new Config([
 	]
 ];
 
-/** Obtiene el valor de la llave 'name' del fichero app.php'
+/** Obtiene el valor de la llave 'name' del fichero app.php' */
 $value = $config->get('key');	// return 'App Name'
 
-/** Obtiene el valor de la llave 'pones.home' del fichero app.php
+/** Obtiene el valor de la llave 'pones.home' del fichero app.php */
 $value = $config->get('app.phones.home');	// return 'xxxx'
 
-La llave 'key' puede ser simple o compuesta. Si es simple la toma del fichero por defecto app en caso contrario, el primer valor de la llave indica el fichero y el resto la propia llave.
+La llave 'key' puede ser simple o compuesta. Si es simple la toma del fichero por defecto app 
+en caso contrario, el primer valor de la llave indica el fichero y el resto la propia llave.
 
 /** retorna la llave dbname del array mysql del fichero database.php dentro del directorio config */
 $dbname = $config->get('database.mysql.dbname');
