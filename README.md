@@ -102,7 +102,7 @@ Template::$path = 'views'; // cambia el directorio por defecto a views en lugar 
 return Template::render('home', $data);
 
 *** Nota: Para incluir una template parcial llamamos al helper 'template_include' que acepta 
-dos parámetros template y data */
+dos parámetros el template y la data */
 
 ###### Ejemplo. Supongamos la siguiente estructura de directorios
 
