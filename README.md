@@ -88,6 +88,7 @@ $config->delete('key');
 /** si queremos eliminar y guardar los cambios, usamos el método purge */
 
 $config->purge('key');
+```
 
 ## Uso de la clase Template
 
@@ -108,10 +109,5 @@ return Template::render('home', $data);
 - templates/
 - templates/partials/header.php
 - templates/home.php
-
-```
-
-
-
 
 ```
