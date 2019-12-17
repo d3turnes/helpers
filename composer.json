@@ -1,0 +1,24 @@
+{
+    "name":"d3turnes/helpers",
+    "description":"Añade funcionalidad extra como fichero de cahe, config y templates a cualquier proyecto de php",
+	"homepage": "https://github.com/d3turnes/helpers/",
+    "keywords": ["cache", "config", "template"],
+    "minimum-stability": "stable",
+	"type":"library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Turnes",
+            "email": "d3turnes@gmail.com",
+            "homepage": "https://extendscode.com",
+            "role": "Developer"
+        }
+    ],    
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {"D3turnes\\Helpers\\": "src/"}
+    },
+	"version":"1.0.0",
+    "prefer-stable": true    
+}
